@@ -65,3 +65,16 @@ Se incluye en la raíz del repositorio el archivo `postman_collection.json` list
   }
 }
 ```
+
+## 4. Entregables de la Prueba Técnica
+
+Para facilitar la revisión, a continuación se detalla la ubicación de cada uno de los requerimientos solicitados:
+
+- **Código fuente:** Ubicado en la ruta `custom_addons/api_external_orders/` (Incluye controladores REST, modelos del ORM y permisos de seguridad).
+- **Instrucciones de instalación y ejecución:** Detalladas en la Sección 1 de este documento.
+- **Documentación de la API:** Detallada en la Sección 3 y respaldada por el archivo `postman_collection.json` listo para importar.
+- **Consultas SQL:** Archivo `queries.sql` ubicado en la raíz del proyecto.
+- **Diagrama lógico y de relación de datos:** Generado dinámicamente con Mermaid en la Sección 2 de este documento.
+- **Archivo AGENTS.md:** Ubicado en la raíz del repositorio, documentando el contexto técnico para agentes de IA.
+- **Pregunta Teórica (Oracle vs PostgreSQL):** Documentada en formato formal en el archivo `respuestas_teoricas_b2b.pdf`.
+- **⭐ Puntos Adicionales (Uso de IA):** Documentados en el archivo `SKILLS.md` en la raíz del repositorio, demostrando el paradigma de desarrollo asistido.
