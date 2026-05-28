@@ -1,0 +1,42 @@
+{
+  "info": {
+    "_postman_id": "c23c6bdd-a9dc-4e64-a789-6f098427f607",
+    "name": "Odoo B2B Integration",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "8358084"
+  },
+  "item": [
+    {
+      "name": "http://localhost:8069/api/orders",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"params\": {\r\n        \"external_id\": \"ORD-002\",\r\n        \"customer\": {\r\n            \"name\": \"Cliente de Prueba API\",\r\n            \"vat\": \"1053123456\",\r\n            \"email\": \"cliente@prueba.com\"\r\n        },\r\n        \"lines\": [\r\n            {\r\n                \"sku\": \"SKU-001\",\r\n                \"qty\": 5,\r\n                \"price\": 120.50\r\n            }\r\n        ]\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8069/api/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8069",
+          "path": [
+            "api",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
