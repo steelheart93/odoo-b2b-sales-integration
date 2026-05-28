@@ -4,12 +4,10 @@ from odoo.http import request
 
 class ExternalOrderController(http.Controller):
 
-    # Exponemos el endpoint. auth='public' permite que sistemas externos se conecten sin session cookie,
-    # csrf=False es necesario para peticiones POST externas.
     @http.route('/api/orders', type='json', auth='public', methods=['POST'], csrf=False)
     def create_order(self, **kwargs):
-        # En Odoo con type='json', el payload se extrae de request.jsonrequest
-        payload = request.jsonrequest
+        # En Odoo 16, el objeto "params" del JSON-RPC llega directo a kwargs
+        payload = kwargs
         external_id = payload.get('external_id')
 
         if not external_id:
@@ -55,7 +53,6 @@ class ExternalOrderController(http.Controller):
                 if qty <= 0:
                     raise ValueError(f'Cantidad inválida para el producto {sku}')
 
-                # Buscamos el producto por su Referencia Interna (default_code)
                 product = Product.search([('default_code', '=', sku)], limit=1)
                 if not product:
                     raise ValueError(f'Producto con SKU {sku} no encontrado en Odoo.')
